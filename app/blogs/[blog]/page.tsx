@@ -1,10 +1,14 @@
 'use client'
 
+import Link from "next/link"
+
 function Blog(props:any) {
 
   console.log(props)
     return (
-      <div>Blog</div>
+      <div>
+        blog
+      </div>
     )
   }
   
