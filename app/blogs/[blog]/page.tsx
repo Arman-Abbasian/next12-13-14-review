@@ -1,3 +1,5 @@
+//dynamic SSG
+
 import Link from "next/link"
 import axios from 'axios';
 import { IBlog } from "../page";
