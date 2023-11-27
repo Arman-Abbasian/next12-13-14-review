@@ -34,8 +34,8 @@ export interface IUser {
 const getUsers=async()=>{
 try {
   const res= await fetch("https://jsonplaceholder.typicode.com/users",{cache:'no-store'});
-   const data=res.json()
-    return data
+   const data:Promise<IUser[]>= res.json()
+    return (await data).slice(0,3)
 } catch (error) {
   console.log(error)
 }

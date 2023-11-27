@@ -28,7 +28,8 @@ async function Blogs() {
         {
         blogList.map((item:IBlog)=>{
       return <p key={item.id}>
-        <Link href={`/blogs/${String(item.id)}`}>{item.title}</Link>
+        {/* <Link href={`/blogs/${String(item.id)}`}>{item.title}</Link> */}
+        <p>{item.title}</p>
         </p>
 }
         )}
