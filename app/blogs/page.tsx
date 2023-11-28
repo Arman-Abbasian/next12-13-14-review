@@ -19,7 +19,6 @@ async function getBlogs(){
   }
 }
 async function Blogs() {
-  console.log(await getBlogs())
  const blogList:IBlog[]= await getBlogs()
 
   return (
@@ -28,8 +27,7 @@ async function Blogs() {
         {
         blogList.map((item:IBlog)=>{
       return <p key={item.id}>
-        {/* <Link href={`/blogs/${String(item.id)}`}>{item.title}</Link> */}
-        <p>{item.title}</p>
+        <Link href={`/blogs/${String(item.id)}`}>{item.title}</Link>
         </p>
 }
         )}
