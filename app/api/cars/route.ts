@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse} from "next/server";
-import clientPromise from "../../../server/utils/dbconnect";
 import Car from "../../../server/models/car";
 import dbConnect from "../../../server/utils/dbconnect";
 
