@@ -1,8 +1,4 @@
-import mongoose from 'mongoose'
-
-var Schema = mongoose.Schema,
-    ObjectId = Schema.ObjectId;
-/* PetSchema will correspond to a collection in your MongoDB database. */
+import * as mongoose from 'mongoose'
 const CarSchema = new mongoose.Schema({
   brand: {
     type: String,
@@ -24,4 +20,5 @@ image:{
 }
 
 })
-module.exports = mongoose.models.Todo || mongoose.model('Car', CarSchema)
+const Car = mongoose.models.Car || mongoose.model('Car', CarSchema)
+export default Car;

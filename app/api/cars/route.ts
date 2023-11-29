@@ -1,21 +1,21 @@
 import { NextRequest, NextResponse} from "next/server";
 import clientPromise from "../../../server/utils/dbconnect";
+import Car from "../../../server/models/car";
+import dbConnect from "../../../server/utils/dbconnect";
 
 
 export async function GET(request: NextRequest) {
-    const client = await clientPromise;
-    const db = client.db("test");
-    const cars = await db.collection("cars").find({}).toArray();
+  await dbConnect()
+    const cars = await Car.find({});
     return NextResponse.json(cars);
   }
 
   export async function POST(request: Request) {
-    const res = await request.json()
-    console.log(res)
-    // const client = await clientPromise;
-    // const db = client.db("test");
-    // const cars = await db.collection("cars").create({});
-    return  NextResponse.json({ message: "Hello World" }, { status: 200 });
+    const {brand,model,property,image} = await request.json()
+    const newCar={brand,model,property,image};
+    await dbConnect();
+    const cars = await Car.create(newCar)
+    return  NextResponse.json({ message: "new data added" }, { status: 201 });
   }
   
   
