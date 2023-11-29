@@ -29,11 +29,11 @@ try {
   if(isError) return <p>some error ocurred ...</p>
     return (
         <div>{(data as ICar[]).map((item:ICar)=>{
-          return <div key={item._id} className="w-60 h-60 bg-red-300">
+          return <div key={item._id} className="w-60 h-60  ring-1 ring-blue-700 rounded-md">
             <div className="h-30">
               <img src={item.image} alt={item.model} className="w-full h-full object-cover" />
             </div>
-            <div>
+            <div className="p-2">
               <h2>{item.brand}</h2>
               <p>{item.model}</p>
               <p>{item.property}</p>
